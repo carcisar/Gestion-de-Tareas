@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Este es el proyecto padre, por lo que no necesita un parent -->
+	
+	<groupId>com.cuaderno</groupId>
+	<artifactId>cuaderno-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>cuaderno-parent</name>
+	<description>Padre del proyecto Cuaderno</description>
+
+	<properties>
+		<!-- Define las versiones de Java, Spring Boot y Spring Cloud -->
+		<java.version>17</java.version>
+		<spring.boot.version>3.1.3</spring.boot.version>
+		<spring.cloud.version>2022.0.4</spring.cloud.version>
+	</properties>
+
+	<!-- Sección de módulos -->
+	<modules>
+		<module>cuaderno-config-service</module>
+		<module>cuaderno-discovery-service</module>
+		<module>cuaderno-gateway-service</module>
+		<module>cuaderno-auth-service</module>
+		<module>cuaderno-task-service</module>
+		<module>cuaderno-note-service</module>
+		<module>cuaderno-notification-service</module>
+	</modules>
+
+	<!-- Gestión de dependencias comunes -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- Importa las dependencias de Spring Boot -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- Importa las dependencias de Spring Cloud -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- Definir plugins comunes -->
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- Plugin de Spring Boot -->
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
