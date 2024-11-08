@@ -23,10 +23,7 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <!-- Dependencia de Spring Security -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+
         <!-- Dependencia de Spring Boot Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -42,6 +39,13 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- Dependencia para base de datos H2 en tiempo de ejecución -->
         <dependency>
             <groupId>com.h2database</groupId>
