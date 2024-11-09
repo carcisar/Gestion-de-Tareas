@@ -45,13 +45,12 @@
             <version>1.18.26</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- Dependencia para base de datos H2 en tiempo de ejecución -->
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>3.1.2</version>
         </dependency>
+
         <!-- Dependencias para pruebas -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -71,6 +70,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>10</source>
+                    <target>10</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
