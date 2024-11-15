@@ -47,11 +47,18 @@
 
     <build>
         <plugins>
-            <!-- Plugin de Spring Boot con versión -->
+            <!-- Plugin de Spring Boot -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>3.3.5</version> <!-- Asegúrate de usar la misma versión que el proyecto padre -->
+                <version>3.3.5</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
