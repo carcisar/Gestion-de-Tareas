@@ -37,4 +37,7 @@ public class Task {
     private Priority priority;
 
     private Long userId;
+
+    @Column(name = "board_id")
+    private Long boardId;
 }

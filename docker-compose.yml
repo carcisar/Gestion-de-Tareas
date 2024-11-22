@@ -63,6 +63,18 @@ services:
       - config-server
       - mariadb
 
+  board-service:
+    networks:
+      - cuaderno-network
+    build:
+      context: ./cuaderno-board-service
+    ports:
+      - "8083:8083"
+    depends_on:
+      - eureka-server
+      - config-server
+      - mariadb
+
 
   auth-service:
     networks:

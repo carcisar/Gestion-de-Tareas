@@ -112,5 +112,10 @@ public class TaskController {
         List<Task> tasks = taskService.searchTasksByKeyword(keyword);
         return new ResponseEntity<>(tasks, HttpStatus.OK);
     }
+
+    @GetMapping("/byIds")
+    public List<Task> getTasksByIds(@RequestParam("ids") List<Long> ids) {
+        return taskService.getTasksByIds(ids);
+    }
 }
 

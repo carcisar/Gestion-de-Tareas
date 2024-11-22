@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.scheduling.config.Task;
+
 
 import java.time.LocalDate;
 import java.util.List;
@@ -41,7 +41,8 @@ public class Board {
     @Min(value = 0, message = "El número de tareas completadas no puede ser negativo")
     private int completedTasks;
 
-    // Si tienes una relación con Task
-    @OneToMany(mappedBy = "board")
-    private List<Task> tasks;
+    @ElementCollection
+    @CollectionTable(name = "board_tasks", joinColumns = @JoinColumn(name = "board_id"))
+    @Column(name = "task_id")
+    private List<Long> taskIds;
 }

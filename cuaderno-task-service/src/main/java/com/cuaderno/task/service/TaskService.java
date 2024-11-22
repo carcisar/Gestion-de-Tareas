@@ -79,4 +79,8 @@ public class TaskService {
     public List<Task> searchTasksByKeyword(String keyword) {
         return taskRepository.searchByKeyword(keyword);
     }
+
+    public List<Task> getTasksByIds(List<Long> ids) {
+        return taskRepository.findAllById(ids);
+    }
 }
