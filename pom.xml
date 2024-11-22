@@ -27,7 +27,7 @@
 		<module>cuaderno-gateway-service</module>
 		<module>cuaderno-auth-service</module>
 		<module>cuaderno-task-service</module>
-		<module>cuaderno-note-service</module>
+		<module>cuaderno-board-service</module>
 		<module>cuaderno-notification-service</module>
 	</modules>
 
